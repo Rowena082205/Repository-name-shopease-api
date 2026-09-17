@@ -36,7 +36,7 @@ describe('POST /api/products', () => {
 			.set('Authorization', `Bearer ${global.testToken}`)
 			.send({ name: 'Bad Item', price: -10, category: 'Electronics' });
 
-		expect(res.statusCode).toBe(200);
+		expect(res.statusCode).toBe(400);
 	});
 
 	it('creates a product with valid data', async () => {
